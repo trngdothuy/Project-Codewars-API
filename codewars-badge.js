@@ -38,12 +38,17 @@ class CodeWarsBadge extends HTMLElement {
         }
         data { 
             color: var(--rank);
+            background-color: #333;
             border: 3px solid; 
             padding: .25em .5em;
+            display: flex;
+            justify-content: center;
         }      
       </style>
         <data value="${this.userData.ranks.overall.score}">
-        ${this.userData.ranks.overall.name}
+        Username: ${this.userData.username}<br>
+        Ranks: ${this.userData.ranks.overall.name}<br>
+        Challenges Completed: ${this.userData.codeChallenges.totalCompleted}
         </data>`;
   }
 }
