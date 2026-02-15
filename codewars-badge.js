@@ -38,11 +38,11 @@ class CodeWarsBadge extends HTMLElement {
         }
         data { 
             color: var(--rank);
-            background-color: #333;
             border: 3px solid; 
-            padding: .25em .5em;
+            padding: 1em .5em;
             display: flex;
             justify-content: center;
+            margin: 0 26rem;
         }      
       </style>
         <data value="${this.userData.ranks.overall.score}">
