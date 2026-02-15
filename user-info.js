@@ -1,8 +1,4 @@
-// This native web component fetches data from the Codewars API and renders it as a badge
-// Here is some information about web component https://developer.mozilla.org/en-US/docs/Web/Web_Components
-// Here is the link to the Codewars API Docs: https://dev.codewars.com/#get-user
-
-class CodeWarsBadge extends HTMLElement {
+class UserInfo extends HTMLElement {
   constructor() {
     super();
     this.attachShadow({ mode: "open" });
@@ -37,19 +33,19 @@ class CodeWarsBadge extends HTMLElement {
            font: 600 100%/1 system-ui, sans-serif;
         }
         data { 
-            color: var(--rank);
-            border: 3px solid; 
+            color: pink;
             padding: 1em .5em;
             display: flex;
             justify-content: center;
-            margin: 1rem 30rem;
+            margin: 0 26rem;
         }      
       </style>
-        <data value="${this.userData.ranks.overall.score}">
-        Overall Rank: ${this.userData.ranks.overall.name}<br>
-        Score: ${this.userData.ranks.overall.score}
+        <data>
+        Username: ${this.userData.username}<br>
+        Challenges Completed: ${this.userData.codeChallenges.totalCompleted}<br>
+        Leaderboard Position: ${this.userData.leaderboardPosition}
         </data>`;
   }
 }
 
-customElements.define("codewars-badge", CodeWarsBadge);
+customElements.define("user-info", UserInfo);
